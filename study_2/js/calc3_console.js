@@ -23,13 +23,12 @@ function Calc (operation, a, b) {
 
 }
 }
-console.log(Calc('sum', 10, 5));
-console.log(Calc('multi', 10, 5));
+console.log(Calc('sum', 0, 0));
+console.log(Calc('sub', 10, 5));
 console.log(Calc('div', 10, 5));
 console.log(Calc('diff', 10, 5));
-console.log(Calc('deg', 10, 5));
-console.log(Calc('rem', 10, 5));
-console.log(Calc('divdeg', 10, 5));
 console.log(Calc('div', 10, '5'));
 console.log(Calc('div', 10, ));
-console.log(Calc('div', 10, 'fff'));
+console.log(Calc('div', 10, 'fff'));m
+
+
