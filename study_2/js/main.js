@@ -1,4 +1,5 @@
 
+
 /* if (checkParametrs == true) {
     function calc (action, a, b);
 }
