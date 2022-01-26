@@ -12,7 +12,7 @@ const operations = {
 Calc(operation);
 
 function Calc (operation) {
-    const isNotValid = a == '' || b == '' || operation == '' || isNaN(a) || isNaN(b);
+    const isNotValid = a === '' || b === '' || operation === '' || isNaN(a) || isNaN(b);
     if (isNotValid) {
         alert('error');
     }
@@ -25,5 +25,4 @@ function Calc (operation) {
         }
 
 }
-
 }
