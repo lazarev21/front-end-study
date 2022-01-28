@@ -49,6 +49,7 @@ function showList() {
             break
         }
 }
+console.log("To do: \n" + (todo || " -") + "\nIn progress: \n" + (inprogress || " -") + "\nDone: \n" + (done || ' -'))
 }  
 
 addTask("let the dog out")
@@ -59,4 +60,4 @@ changeStatus("create a new practice task", "In Progress")
 
 showList()
 
-console.log("To do: \n" + (todo || " -") + "\nIn progress: \n" + (inprogress || " -") + "\nDone: \n" + (done || ' -'))
+
