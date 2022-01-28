@@ -1,7 +1,16 @@
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+}
+
+delete menu["width"]
+
+console.log(menu.width === undefined)
 
 //Задача 3. Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
 
-let menu = {
+/* let menu = {
     width: 200,
     height: 300,
     title: "My menu"
@@ -17,7 +26,7 @@ let menu = {
   }
 
   multiplyNumeric(menu);
-  console.log(menu);
+  console.log(menu); */
 
 /* let salaries = {
     John: 100,

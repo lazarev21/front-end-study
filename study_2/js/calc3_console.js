@@ -1,7 +1,3 @@
-
-
-
-
 function Calc (operation, a, b) {
     const isNotValid = isNaN(a) || isNaN(b);
     const operations = {
