@@ -1,5 +1,5 @@
 const list = {
-    "create a new practice task": "In Progress", 
+    "create a new practice task": "Done", 
     "make a bed": "Done",
     "write a post": "To Do",
 }
@@ -30,32 +30,44 @@ function deleteTask (task) {
 }
 
 function showList () {
+
     console.log ("To Do:")
+    let counttasksToDo = 0;
     for (key in list) {
         if (list[key] === "To Do") {
             console.log (" " + "\"" + key + "\"" + ",")
+            counttasksToDo++;
         }
-        else {
-            continue
-        }
+    
     }
+    if (counttasksToDo < 1) {
+        console.log(' -');
+    }
+
     console.log ("In Progress:")
+    let countTasksInProgress = 0;
     for (key in list) {
         if (list[key] === "In Progress") {
             console.log (" " + "\"" + key + "\"" + ",")
+            countTasksInProgress++;
         }
-        else {
-            continue
-        }
+    
     }
+    if (countTasksInProgress < 1) {
+        console.log(' -');
+    }
+
     console.log ("Done:")
+    let counttasksDone = 0;
     for (key in list) {
         if (list[key] === "Done") {
                 console.log (" " + "\"" + key + "\"" + ",")
+                counttasksDone++;
         }
-        else {
-            continue
-        }
+      
+    }
+    if (counttasksDone < 1) {
+        console.log(' -');
     }
 }
 
