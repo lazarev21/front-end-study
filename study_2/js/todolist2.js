@@ -1,6 +1,6 @@
 const list = {
     "create a new practice task": "Done", 
-    "make a bed": "Done",
+    "make a bed": "In Progress",
     "write a post": "To Do",
 }
 
@@ -74,5 +74,5 @@ function showList () {
 addTask("let the dog out")
 addTask("wash dishes")
 changeStatus("wash dishes", "In Progress")
-changeStatus("wash dishes", "Done")
+changeStatus("create a new practice task", "In Progress")
 showList()
