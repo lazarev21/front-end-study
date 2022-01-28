@@ -76,4 +76,6 @@ addTask("wash dishes")
 deleteTask("make a bed")
 changeStatus("wash dishes", "In Progress")
 changeStatus("create a new practice task", "In Progress")
+
 showList()
+
