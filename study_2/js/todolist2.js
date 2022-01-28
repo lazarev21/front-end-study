@@ -33,7 +33,7 @@ function showList () {
     console.log ("To Do:")
     for (key in list) {
         if (list[key] === "To Do") {
-                console.log (" " + key)
+            console.log (" " + "\"" + key + "\"" + ",")
         }
         else {
             continue
@@ -42,7 +42,7 @@ function showList () {
     console.log ("In Progress:")
     for (key in list) {
         if (list[key] === "In Progress") {
-                console.log (" " + key)
+            console.log (" " + "\"" + key + "\"" + ",")
         }
         else {
             continue
@@ -51,7 +51,7 @@ function showList () {
     console.log ("Done:")
     for (key in list) {
         if (list[key] === "Done") {
-                console.log (" " + key)
+                console.log (" " + "\"" + key + "\"" + ",")
         }
         else {
             continue
