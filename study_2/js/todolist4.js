@@ -5,6 +5,12 @@ const STATUS = {
     DEFAULT: 'To Do',
 }
 
+const tasks = {
+    [STATUS.DONE]: '',
+    [STATUS.IN_PROGRESS]: '',
+    [STATUS.TO_DO]: '',
+
+}
 
 
 const list = {
@@ -38,23 +44,15 @@ function deleteTask(task) {
     
 }
 
-const tasks = {
-    [STATUS.DONE]: '',
-    [STATUS.IN_PROGRESS]: '',
-    [STATUS.TO_DO]: '',
-
-}
 
 function showList() {
     for (let key in list) {
         tasks[list[key]] += key + '\n';
     }        
 
-}
-
 console.log('To do: \n' + (tasks[STATUS.TO_DO] || ' -') + '\nIn progress: \n' + (tasks[STATUS.IN_PROGRESS] || ' -') + '\nDone: \n' + (tasks[STATUS.DONE] || ' -'))
 
-
+}
 
 
 addTask('let the dog out')
