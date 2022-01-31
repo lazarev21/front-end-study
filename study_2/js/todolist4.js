@@ -2,7 +2,7 @@ const STATUS = {
     DONE: 'Done',
     IN_PROGRESS: 'In Progress',
     TO_DO: 'To Do',
-    DEFALUT: 'To Do',
+    DEFAULT: 'To Do',
 }
 
 
@@ -24,7 +24,7 @@ function addTask (task) {
         return
     }
     else {
-        list[task] = STATUS.DEFALUT;
+        list[task] = STATUS.DEFAULT;
     }
 }
 
