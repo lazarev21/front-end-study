@@ -47,10 +47,12 @@ function deleteTask(task) {
 
 function showList() {
     for (let key in list) {
-        tasks[list[key]] += key + '\n';
+        tasks[list[key]] += ' ' + `"${key}"` +',' + '\n';
     }        
 
-console.log('To do: \n' + (tasks[STATUS.TO_DO] || ' -') + '\nIn progress: \n' + (tasks[STATUS.IN_PROGRESS] || ' -') + '\nDone: \n' + (tasks[STATUS.DONE] || ' -'))
+console.log('To do: \n' + (tasks[STATUS.TO_DO] || ' -') +
+            '\nIn progress: \n' + (tasks[STATUS.IN_PROGRESS] || ' -') +
+            '\nDone: \n' + (tasks[STATUS.DONE] || ' -'))
 
 }
 
