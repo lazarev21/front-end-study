@@ -2,14 +2,14 @@
 
 
 function showVerticalMessage (str) {
-    const maxlength = 10;
-    const firstLetter = 'м';
+    const MAX_LENGTH = 10;
+    const FIRST_LETTER = 'м';
     let stringToRow = ``
-    if (str.length > 10) {
-        str = (str.slice(0, maxlength))
+    if (str.length > MAX_LENGTH) {
+        str = (str.slice(0, MAX_LENGTH))
     }
 
-    if (str[0] === firstLetter ) {
+    if (str[0] === FIRST_LETTER ) {
     str = str[0].toUpperCase() + str.slice(1);
 }
     for (let char of str) {
