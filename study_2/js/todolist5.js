@@ -13,47 +13,86 @@ const tasks = {
 }
 
 
-const list = {
-    'create a new practice task': STATUS.DONE, 
-    'make a bed': STATUS.IN_PROGRESS,
-    'write a post': STATUS.TO_DO,
+const PRIORITIES = {
+        LOW: 'low',
+        MEDIUM: 'medium',
+        HIGH: 'high',
+        DEFAULT: 'low',
+
 }
+
+const tasksByPriority = {
+    [PRIORITIES.LOW]: '',
+    [PRIORITIES.MEDIUM]: '',
+    [PRIORITIES.HIGH]: '',
+
+}
+
+
+const list = [ { name: 'write a post', status: STATUS.TO_DO, priority: PRIORITIES.LOW  },
+               { name: 'make a bed', status: STATUS.IN_PROGRESS, priority: PRIORITIES.HIGH },
+               { name: 'create a new practice task', status: STATUS.DONE, priority: PRIORITIES.MEDIUM } 
+            ] 
+
+
 
 function changeStatus(task, status) {
-    if (task in list){ 
-        list[task] = status;
-    }
+    list.forEach(function(item) {
+        if (item.name === task) {
+            item.status = status
+        }
+    
+    })
 }
+
 
 function addTask (task) {
-    if (task in list) {
-        return
-    }
-    else {
-        list[task] = STATUS.DEFAULT;
-    }
+        if (!list.includes(list.task)) 
+            list.push({name: task, status: STATUS.DEFAULT, priority: PRIORITIES.DEFAULT})
 }
+
 
 function deleteTask(task) {
-    if (task in list) {
-        delete list[task];
+    list.forEach(function(item, index) {
+        if (item.name == task) { 
+        list.splice(index, 1)
     }
-    else {
-        return
-    }
-    
+})
 }
 
-
 function showList() {
-    for (let key in list) {
-        tasks[list[key]] += ' ' + `"${key}"` +',' + '\n';
-    }        
+  list.forEach(function(item){
+      
+            tasks[item.status] += ' ' + `"${item.name}"` +',' + '\n';
+
+    })
 
 console.log('To do: \n' + (tasks[STATUS.TO_DO] || ' -') 
           + '\nIn progress: \n' + (tasks[STATUS.IN_PROGRESS] || ' -') 
           + '\nDone: \n' + (tasks[STATUS.DONE] || ' -'))
+}
 
+function showListPriority() {
+    list.forEach(function(item){
+        
+              tasksByPriority[item.priority] += ' ' + `"${item.name}"` +',' + '\n';
+  
+      })
+  
+  console.log('Low priority: \n' + (tasksByPriority[PRIORITIES.LOW] || ' -') 
+            + '\nMedium priority: \n' + (tasksByPriority[PRIORITIES.MEDIUM] || ' -') 
+            + '\nHigh priority: \n' + (tasksByPriority[PRIORITIES.HIGH] || ' -'))
+  }
+  
+
+function showBy (parametr) {
+    if (parametr == 'status') {
+        showList()
+    }
+    if (parametr == 'priority'){
+        showListPriority()
+    }
+    else return
 }
 
 
@@ -62,7 +101,4 @@ addTask('wash dishes')
 deleteTask('make a bed')
 changeStatus('wash dishes', 'In Progress')
 changeStatus('create a new practice task', 'In Progress')
-
-showList()
-
-
+showBy ('priority')
