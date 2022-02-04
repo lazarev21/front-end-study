@@ -18,7 +18,6 @@ const PRIORITIES = {
         MEDIUM: 'medium',
         HIGH: 'high',
         DEFAULT: 'low',
-
 }
 
 const tasksByPriority = {
@@ -54,7 +53,7 @@ function addTask (task) {
 
 function deleteTask(task) {
     list.forEach(function(item, index) {
-        if (item.name == task) { 
+        if (item.name === task) { 
         list.splice(index, 1)
     }
 })
@@ -86,10 +85,10 @@ function showListPriority() {
   
 
 function showBy (parametr) {
-    if (parametr == 'status') {
+    if (parametr === 'status') {
         showList()
     }
-    if (parametr == 'priority'){
+    if (parametr === 'priority'){
         showListPriority()
     }
     else return
