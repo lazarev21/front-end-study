@@ -1,5 +1,14 @@
 
 
+function getAverage(marks){
+    
+   console.log((marks.reduce((sum, current) => sum + current, 0) ) / marks.length)
+}
+
+  getAverage([1,2,3,4,5,])
+
+
+
 /* function copySorted(arr) {
     return arr.slice().sort();
   }
