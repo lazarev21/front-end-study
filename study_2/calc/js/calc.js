@@ -21,7 +21,7 @@ container.addEventListener('click', function (event)  {
             result.innerHTML = strResultLog;
         }
         }
-        
+            
 
     if (event.target.closest('.btn-clear')) { 
         arrayOfClicks = []; //обнуляем массив
@@ -40,9 +40,27 @@ container.addEventListener('click', function (event)  {
         }
     }
 })  
-
 function argumentsForCalc() {
+
+    const operationsFromUi = {
+        '+': 'sum',
+        '–': 'sub',
+        '÷': 'div',
+        '×': 'mult',
+    }
+
     for (let i = 0; i <arrayOfClicks.length; i++) { //перебираем каждый элемент массива, пока не найдем действие
+        if (arrayOfClicks[i] in operationsFromUi) {
+            a = +(arrayOfClicks.slice([0], [i]).join(''));
+            b = +(arrayOfClicks.slice([i+1], [arrayOfClicks.length]).join(''))
+            operation = operationsFromUi[arrayOfClicks[i]];
+            return Calc(operation,a,b)
+        }
+    }
+}
+        
+        
+     /*    
         switch(arrayOfClicks[i]) {
             case '+':
                 operation = 'sum';
@@ -66,7 +84,8 @@ function argumentsForCalc() {
                 return Calc(operation,a,b);
         }
     }
-}
+} */
+
 
 function Calc (operation, a, b) {
     const isNotValid = isNaN(a) || isNaN(b);
