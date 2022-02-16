@@ -4,9 +4,10 @@ const actions = document.querySelector('.actionsLog')
 let arrayOfClicks = [];
 
 container.addEventListener('click', function (event)  {
-    if (event.target.closest('.btn-val') || event.target.closest('.btn-action')) {
-        let target = event.target.innerHTML;
-        arrayOfClicks.push(target); //создаем массив из значений, который накликал пользователь
+    let target = event.target.innerHTML;
+
+    if (event.target.closest('.btn-value') || event.target.closest('.btn-action')) {
+        arrayOfClicks.push(target); //добавялем в массив значения, который накликал пользователь
         strActionLog = arrayOfClicks.join(''); //преобразуем в строку, чтобы было удобнее работать дальше
         actions.innerHTML = strActionLog;  //выводим в историю дейсвтий
     }
@@ -20,8 +21,8 @@ container.addEventListener('click', function (event)  {
         else {
             result.innerHTML = strResultLog;
         }
-        }
-            
+    }
+
 
     if (event.target.closest('.btn-clear')) { 
         arrayOfClicks = []; //обнуляем массив
@@ -35,8 +36,8 @@ container.addEventListener('click', function (event)  {
             actions.innerHTML ='0';
         }
         else {
-        arrayOfClicks.splice(-1,1) //удаляем один последний элемент
-        actions.innerHTML = arrayOfClicks.join('');
+            arrayOfClicks.splice(-1,1) //удаляем один последний элемент
+            actions.innerHTML = arrayOfClicks.join('');
         }
     }
 })  
@@ -58,34 +59,6 @@ function argumentsForCalc() {
         }
     }
 }
-        
-        
-     /*    
-        switch(arrayOfClicks[i]) {
-            case '+':
-                operation = 'sum';
-                a = +(arrayOfClicks.slice([0], [i]).join('')) //все что до дейсвтия - первое значение
-                b = +(arrayOfClicks.slice([i+1], [arrayOfClicks.length]).join('')) //все что после дейсвтия - второе значение
-                return Calc(operation,a,b); //возвращем результат функции с данными параметрами
-            case '–':
-                    operation = 'sub';
-                    a = +(arrayOfClicks.slice([0], [i]).join(''))
-                    b = +(arrayOfClicks.slice([i+1], [arrayOfClicks.length]).join(''))
-                return Calc(operation,a,b);
-            case '×':
-                operation = 'mult';
-                a = +(arrayOfClicks.slice([0], [i]).join(''))
-                b = +(arrayOfClicks.slice([i+1], [arrayOfClicks.length]).join(''))
-                return Calc(operation,a,b);
-            case '÷':
-                operation = 'div';
-                a = +(arrayOfClicks.slice([0], [i]).join(''))
-                b = +(arrayOfClicks.slice([i+1], [arrayOfClicks.length]).join(''))
-                return Calc(operation,a,b);
-        }
-    }
-} */
-
 
 function Calc (operation, a, b) {
     const isNotValid = isNaN(a) || isNaN(b);
