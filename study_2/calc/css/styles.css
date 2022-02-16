@@ -1,5 +1,5 @@
 * {
-    font-family: 'Work Sans' sans-serif;
+    font-family: 'Work Sans', sans-serif;
     margin: 0;
     padding: 0;
     color: white;
@@ -43,7 +43,7 @@
     display: flex;
     justify-content: flex-end;
     margin-bottom: 16px;
-  
+
 }
 .actions a {
    font-size: 40px;
@@ -62,7 +62,14 @@
     margin-bottom: 16px;
 }
 
-.result a {
+.result {
+    display: flex;
+    justify-content: flex-end;
+    width: 324px;
+    height: 96px;
+    margin-bottom: 16px;
+}
+.resultLog {
     padding-bottom: 16px;
     font-size: 96px;
     line-height: 96px;
@@ -70,6 +77,13 @@
     text-shadow: #2E2F38;  
 }
 
+.resultLog.longer {
+    padding-bottom: 16px;
+    font-size: 48px;
+    line-height: 48px;
+    font-weight: 200;
+    text-shadow: #2E2F38;  
+}
 .icon {
     width: 32px;
     height: 32px;

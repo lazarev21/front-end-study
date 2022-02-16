@@ -9,38 +9,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/study_2/calc/css/styles.css">
     <title>Calculator UI</title>
+    
 </head>
 <body>
-    <div class="main-block">
+    <div class="main-block" id="text">
         <div class="content-block">
             <div class="actions">
-                <a>6,291&divide;5</a>
+                <a class="actionsLog">0</a>
             </div>
             <div class="result">
-                <a>1,258.3</a>
+                <a class="resultLog">0</a>
             </div>
-            <div class="container">
+            <div class="container" id="container">
                 <button class="btn item1 btn-clear">C</button>
-                <button class="btn item2">
+                <button class="btn item2 btn-backspace">
                     <img src="/study_2/calc/img/👀 Icon.png" alt="" class="icon">
                 </button>
                 <button class="btn item3 btn-action">&divide;</button>
-                <button class="btn item4">7</button>
-                <button class="btn item5">8</button>
-                <button class="btn item6">9</button>
+                <button class="btn item4 btn-val">7</button>
+                <button class="btn item5 btn-val">8</button>
+                <button class="btn item6 btn-val">9</button>
                 <button class="btn item7 btn-action">×</button>
-                <button class="btn item8">4</button>
-                <button class="btn item9">5</button>
-                <button class="btn item10">6</button>
+                <button class="btn item8 btn-val">4</button>
+                <button class="btn item9 btn-val">5</button>
+                <button class="btn item10 btn-val">6</button>
                 <button class="btn item11 btn-action">–</button>
-                <button class="btn item12">1</button>
-                <button class="btn item13">2</button>
-                <button class="btn item14">3</button>
+                <button class="btn item12 btn-val">1</button>
+                <button class="btn item13 btn-val">2</button>
+                <button class="btn item14 btn-val">3</button>
                 <button class="btn item15 btn-action">+</button>
-                <button class="btn item16">0</button>
-                <button class="btn item17 btn-action">=</button>
+                <button class="btn item16 btn-val">0</button>
+                <button class="btn item17 btn-result">=</button>
             </div>
         </div>
     </div>
 </body>
 </html>
+<script type="text/javascript" src="/study_2/calc/js/calc3_console.js"></script>
