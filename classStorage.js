@@ -1,37 +1,41 @@
-
 class Storage {
 
-    constructor(names) {
+    constructor(names, storage) {
+        this.DEFAULT_STORAGE = 'localStorage'
         this.key = names
+        this.storage = storage ?? this.DEFAULT_STORAGE;
     }
     
     set(value) {
-        localStorage.setItem(this.key, value)
+        this.storage.setItem(this.key, value)
     }
     
     get() {
-        console.log(localStorage.getItem(this.key))
+        console.log(this.storage.getItem(this.key))
     }
     
     clear() {
-        localStorage.removeItem(this.key)
+        this.storage.removeItem(this.key)
     }
     
     isEmpty() {
-        let result = localStorage.getItem(this.key) ?? false
+        let isEmpty = this.storage.getItem(this.key) ?? false
         if(result) {
-            console.log(true)
+            console.log(false)
         }
         else {
-          console.log(false)
+          console.log(true)
         }
     }
     }
     
     
-    const names = new Storage ('gevar')
+    const names = new Storage ('gevar', sessionStorage)
     names.set('krasava')
     names.get()
     names.clear() 
     names.set('krasava2')
     names.isEmpty()
+    names.clear() 
+    names.isEmpty()
+    
