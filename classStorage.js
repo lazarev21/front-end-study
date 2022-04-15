@@ -19,8 +19,8 @@ class Storage {
     }
     
     isEmpty() {
-        let isEmpty = this.storage.getItem(this.key) ?? false
-        if(isEmpty) {
+        let isFilled = this.storage.getItem(this.key) ?? false
+        if(isFilled) {
             console.log(false)
         }
         else {
