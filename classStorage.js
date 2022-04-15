@@ -30,7 +30,7 @@ class Storage {
     }
     
     
-    const names = new Storage ('gevar', sessionStorage)
+    const names = new Storage ('test_key', sessionStorage)
     names.set('krasava')
     names.get()
     names.clear() 
