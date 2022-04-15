@@ -20,7 +20,7 @@ class Storage {
     
     isEmpty() {
         let isEmpty = this.storage.getItem(this.key) ?? false
-        if(result) {
+        if(isEmpty) {
             console.log(false)
         }
         else {
